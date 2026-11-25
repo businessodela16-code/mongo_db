@@ -1,0 +1,18 @@
+// Active: 1795561402536@@cluster0.iibyxjv.mongodb.net@443@teste
+db("sample_mflix").collection("movies").find()
+
+db("sample_mflix").collection("movies").find(
+    {},
+    {
+        title: 1,
+        year: 1
+    }
+)
+
+db("sample_mflix").collection("movies").find({ year: 2000 })
+
+db("sample_mflix").collection("movies").find({ year: { $gt: 2010 } })
+
+db("sample_mflix").collection("movies").find({ genres: "Action" })
+
+db("sample_mflix").collection("movies").find({ runtime: { $gt: 120 } })
