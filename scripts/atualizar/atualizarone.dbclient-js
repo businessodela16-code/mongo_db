@@ -1,0 +1,38 @@
+// Active: 1795561402536@@cluster0.iibyxjv.mongodb.net@443@teste
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").updateOne(
+    { nome: "Marco"},
+    {
+        $set: {
+            idade: 19
+        }
+    }
+)
+
+db("teste").collection("aula").updateOne(
+    { idade: 19 },
+    {
+        $inc: {
+            idade: 1
+        }
+    }
+)
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").updateMany(
+    { idade: 19 },
+    {
+        $inc: {
+            idade: -1
+        }
+    }
+)
+
+db("teste").collection("aula").updateMany(
+    {},
+    {
+        $currentDate: {
+            updatedAt: true
+        }
+    }
+)

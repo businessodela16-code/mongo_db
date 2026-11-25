@@ -1,0 +1,30 @@
+// Active: 1795561402536@@cluster0.iibyxjv.mongodb.net@443@teste
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").insertOne(
+    {
+        nome: "Marco",
+        idade: 28
+    }
+)
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").insertMany(
+    [
+        {
+            nome: "Anuar",
+            idade: 28
+        },
+        {
+            nome: "Gabriel",
+            idade: 19
+        },
+        {
+            nome: "Henrique",
+            idade: 18
+        },
+        {
+            nome: "Thiago",
+            idade: 19
+        }
+    ]
+)

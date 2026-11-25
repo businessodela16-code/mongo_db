@@ -1,0 +1,67 @@
+// Active: 1795561402536@@cluster0.iibyxjv.mongodb.net@443@teste
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").countDocuments()
+
+db("teste").collection("aula").countDocuments({ idade: 19 })
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").find();
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").findOne()
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").find().limit(3)
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").find().skip(3)
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").find(
+    {},
+    {
+        nome: 1,
+        idade: 0
+    }
+)
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").find().sort({ nome: 1 })
+
+db("teste").collection("aula").find().sort({ nome: -1 })
+
+// Active: 1795126008448@@cluster0.q2zjqvg.mongodb.net@443@teste
+db("teste").collection("aula").find({ nome: "Marco" })
+
+db("teste").collection("aula").find({ idade: 19 })
+
+db("teste").collection("aula").find({ idade: { $gt: 18 } })
+
+db("teste").collection("aula").find({ idade: { $lt: 19 } })
+
+db("teste").collection("aula").find({ idade: { $gte: 18 } })
+
+db("teste").collection("aula").find({ idade: { $lte: 19 } })
+
+db("teste").collection("aula").find({
+    nome: "Marco",
+    idade: 28
+})
+
+db("teste").collection("aula").find({
+    idade: {
+        $gt: 18,
+        $lt: 28
+    }
+})
+
+db("teste").collection("aula").find({
+    $or: [
+        { idade: 28 },
+        { nome: "Henrique" }
+    ]
+})
+
+db("teste").collection("aula").find({ idade: { $ne: 18 } })
+
+db("teste").collection("aula").find({ nome: { $regex: "a" } })
